@@ -1,5 +1,4 @@
-from operator import truediv
-
+from validate_docbr import CPF
 
 class Cpf:
     
@@ -14,15 +13,13 @@ class Cpf:
     
     def cpf_valido(self, documento):
         if len(documento) == 11:
-            return True
+            validador = CPF()
+            return validador.validate(documento)
         else:
             return False
         
     def formatar_cpf(self):
         
-        self.parte_um = self.cpf[:3]
-        self.parte_dois = self.cpf[3:6]
-        self.parte_tres = self.cpf[6:9]
-        self.parte_quatro = self.cpf[9:]
+        mascara = CPF()
 
-        return f'{self.parte_um}.{self.parte_dois}.{self.parte_tres}-{self.parte_quatro}'
+        return mascara.mask(self.cpf)
