@@ -9,16 +9,13 @@ class Cnpj:
             raise ValueError("cnpj invalido")
         
     def __str__(self):
-        return self.formatar_cnpj()
+        return self.formatar()
     
     def cnpj_valido(self, documento):
-        if len(documento) == 14:
             validador = CNPJ()
             return validador.validate(documento)
-        else:
-            return False
         
-    def formatar_cnpj(self):
+    def formatar(self):
         
         mascara = CNPJ()
 

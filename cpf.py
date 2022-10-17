@@ -9,16 +9,13 @@ class Cpf:
             raise ValueError("Cpf invalido")
         
     def __str__(self):
-        return self.formatar_cpf()
+        return self.formatar()
     
     def cpf_valido(self, documento):
-        if len(documento) == 11:
             validador = CPF()
             return validador.validate(documento)
-        else:
-            return False
         
-    def formatar_cpf(self):
+    def formatar(self):
         
         mascara = CPF()
 
